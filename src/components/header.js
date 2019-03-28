@@ -44,6 +44,23 @@ const StyledHeader = styled.header`
         position: absolute;
         right: 0;
       }
+
+      &:nth-child(1)::before,
+      &:nth-child(2)::before {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 1em;
+      }
+
+      &:nth-child(1)::before{
+        content: url(${mapPin});
+        width: 15px;
+      }
+
+      &:nth-child(2)::before {
+        content: url(${phone});
+        width: 10px;
+      }
     }
   }
 `
