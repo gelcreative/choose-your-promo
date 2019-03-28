@@ -58,9 +58,15 @@ const GlobalStyle = createGlobalStyle`
   /* end css-reset */
 
   @import url(${bulma});
+  @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700");
 
   html {
     font-size: 10px;
+  }
+
+  body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.6rem;
   }
 `
 
