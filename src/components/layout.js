@@ -31,7 +31,7 @@ const Layout = ({ children }) => (
         <>
           <Header siteTitle={data.site.siteMetadata.title} />
           <GlobalStyle />
-          <main>{children}</main>
+          <main role="main">{children}</main>
           <Footer />
         </>
       </ThemeProvider>

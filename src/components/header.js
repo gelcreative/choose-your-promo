@@ -22,13 +22,33 @@ const StyledHeader = styled.header`
       max-width: 100%;
     }
   }
+
+  .header-info-right {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    li {
+      padding: 0.5rem 3%;
+      position: relative;
+      
+      &:nth-child(1)::after,
+      &:nth-child(2)::after {
+        content: '|';
+        display: inline-block;
+        position: absolute;
+        right: 0;
+      }
+    }
+  }
 `
 
 const Header = ({ siteTitle }) => (
   <StyledHeader className="section">
     <div className="container">
       <div className="columns">    
-        <div className="column is-5">
+        <div className="column is-3">
           <div className="columns logo-columns">
             <div className="column lincoln-logo">
               <img src={lincolnLogo} alt="Lincoln Logo" />
@@ -38,11 +58,11 @@ const Header = ({ siteTitle }) => (
             </div>
           </div>
         </div>
-        <div className="column is-7">
-          <ul className="columns">
-            <li className="column">379 Bayfield St, Barrie, ON L4M 3C5</li>
-            <li className="column"> Sales: (877) 634-5224 </li>
-            <li className="column">Service: (877) 868-1812</li>
+        <div className="column is-9">
+          <ul className="header-info-right">
+            <li>379 Bayfield St, Barrie, ON L4M 3C5</li>
+            <li> Sales: (877) 634-5224 </li>
+            <li>Service: (877) 868-1812</li>
           </ul>
         </div>
       </div>
