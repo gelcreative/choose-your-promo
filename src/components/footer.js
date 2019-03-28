@@ -11,7 +11,6 @@ const Footer = () => {
     <StyledFooter className="section">
       <div className="container">
         <div className="columns">
-          <small>Poopoo.</small>
         </div>
       </div>
     </StyledFooter>
