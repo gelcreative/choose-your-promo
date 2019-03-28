@@ -1,5 +1,7 @@
 import { createGlobalStyle } from 'styled-components'
-import bulmaGrid from 'bulma/sass/grid/_all.sass'
+// import bulmaUtilities from 'bulma/sass/utilities/_all.sass'
+// import bulmaGrid from 'bulma/sass/grid/_all.sass'
+import bulma from 'bulma'
 
 import theme from './theme'
 
@@ -55,16 +57,10 @@ const GlobalStyle = createGlobalStyle`
 
   /* end css-reset */
 
-  @import url(${bulmaGrid});
+  @import url(${bulma});
 
-  body {
-    background: pink;
-  }
-
-  .container {
-    width: ${theme.contentWidth};
-    max-width: 95%;
-    margin: 0 auto;
+  html {
+    font-size: 10px;
   }
 `
 
