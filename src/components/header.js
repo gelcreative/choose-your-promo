@@ -1,6 +1,11 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
 import React from "react"
+import PropTypes from "prop-types"
+import { Link } from "gatsby"
+import styled from 'styled-components'
+
+const StyledHeader = styled.header`
+  background: ${props => props.theme.gray};
+`
 
 const Header = ({ siteTitle }) => (
   <header
