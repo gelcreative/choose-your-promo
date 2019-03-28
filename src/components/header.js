@@ -12,7 +12,7 @@ const StyledHeader = styled.header`
 
 const Header = ({ siteTitle }) => (
   <StyledHeader>
-    <div className="container">
+    <div className="container columns">
       <img src={lincolnLogo} alt="Lincoln Logo" width="200" />
     </div>
   </StyledHeader>
