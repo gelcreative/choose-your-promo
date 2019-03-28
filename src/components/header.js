@@ -36,15 +36,8 @@ const StyledHeader = styled.header`
       padding: 0.5rem 3%;
       position: relative;
       flex-shrink: 1;
+      white-space: nowrap;
       
-      &:nth-child(1)::after,
-      &:nth-child(2)::after {
-        content: '|';
-        display: inline-block;
-        position: absolute;
-        right: 0;
-      }
-
       &:nth-child(1)::before,
       &:nth-child(2)::before {
         display: inline-block;
@@ -61,6 +54,32 @@ const StyledHeader = styled.header`
         content: url(${phone});
         width: 10px;
       }
+    }
+  }
+
+  @media (min-width: 400px) {
+    .header-info-right {
+      li {
+        &:nth-child(1)::after,
+        &:nth-child(2)::after {
+          content: '|';
+          display: inline-block;
+          position: absolute;
+          right: 0;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+    }
+  }
+
+  @media (max-width: 600px) {
+    .column,
+    ul,
+    li {
+      text-align: center;
+      justify-content: center;
+      align-items: center;
     }
   }
 `
