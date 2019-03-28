@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
+import bulmaGrid from 'bulma/sass/grid/_all.sass'
 
 import theme from './theme'
 
@@ -51,6 +52,10 @@ const GlobalStyle = createGlobalStyle`
     border-collapse: collapse;
     border-spacing: 0;
   }
+
+  /* end css-reset */
+
+  @import url(${bulmaGrid});
 
   body {
     background: pink;
