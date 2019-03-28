@@ -4,6 +4,8 @@ import styled from 'styled-components'
 
 import lincolnLogo from '../images/lincoln_logo.svg'
 import bayfieldLincolnLogo from '../images/bayfield_lincoln_logo_black.png'
+import mapPin from '../images/map-pin.svg'
+import phone from '../images/phone.svg'
 
 const StyledHeader = styled.header`
   background: ${props => props.theme.gray};
@@ -28,10 +30,12 @@ const StyledHeader = styled.header`
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    flex-wrap: wrap;
 
     li {
       padding: 0.5rem 3%;
       position: relative;
+      flex-shrink: 1;
       
       &:nth-child(1)::after,
       &:nth-child(2)::after {
