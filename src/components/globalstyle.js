@@ -3,8 +3,6 @@ import { createGlobalStyle } from 'styled-components'
 // import bulmaGrid from 'bulma/sass/grid/_all.sass'
 import bulma from 'bulma'
 
-import theme from './theme'
-
 const GlobalStyle = createGlobalStyle`
   /* http://meyerweb.com/eric/tools/css/reset/ 
     v2.0 | 20110126

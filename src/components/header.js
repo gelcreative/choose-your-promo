@@ -57,7 +57,7 @@ const StyledHeader = styled.header`
     }
   }
 
-  @media (min-width: 400px) {
+  @media (min-width: 770px) {
     .header-info-right {
       li {
         &:nth-child(1)::after,
@@ -73,13 +73,17 @@ const StyledHeader = styled.header`
     }
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 769px) {
     .column,
     ul,
     li {
       text-align: center;
       justify-content: center;
       align-items: center;
+    }
+
+    .header-info-right {
+      flex-direction: column;
     }
   }
 `
