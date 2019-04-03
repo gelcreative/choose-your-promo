@@ -2,13 +2,13 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from 'styled-components'
 
-import lincolnLogo from '../images/lincoln_logo.svg'
-import bayfieldLincolnLogo from '../images/bayfield_lincoln_logo_black.png'
-import mapPin from '../images/map-pin.svg'
-import phone from '../images/phone.svg'
+import lincolnLogo from '../images/lincoln_logo_white.svg'
+import dealerLogo from '../images/whiteoak_lincoln.png'
+import mapPin from '../images/map-pin-white.svg'
+import phone from '../images/phone-white.svg'
 
 const StyledHeader = styled.header`
-  background: ${props => props.theme.gray};
+  background: ${props => props.theme.black};
 
   .logo-columns > .column {
     display: flex;
@@ -37,6 +37,7 @@ const StyledHeader = styled.header`
       position: relative;
       flex-shrink: 1;
       white-space: nowrap;
+      color: ${props => props.theme.white};
       
       &:nth-child(1)::before,
       &:nth-child(2)::before {
@@ -98,14 +99,14 @@ const Header = ({ siteTitle }) => (
               <img src={lincolnLogo} alt="Lincoln Logo" />
             </div>
             <div className="column bayfield-logo">
-              <img src={bayfieldLincolnLogo} alt="Bayfield Lincoln" />
+              <img src={dealerLogo} alt="Bayfield Lincoln" />
             </div>
           </div>
         </div>
         <div className="column is-9">
           <ul className="header-info-right">
-            <li>379 Bayfield St, Barrie, ON L4M 3C5</li>
-            <li> Sales: (877) 634-5224 </li>
+            <li>3285 MAVIS RD. MISSISSAUGA, ON, L5C 1T7</li>
+            <li>Sales: (905) 270-8210</li>
             <li>Service: (877) 868-1812</li>
           </ul>
         </div>
