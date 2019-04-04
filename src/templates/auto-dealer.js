@@ -13,12 +13,13 @@ export const AutoDealerPageTemplate = ({
 }
 
 const AutoDealerPage = ({ data }) => {
-  const { markdownRemark: promo } = data
+  const { frontmatter: promo } = data.markdownRemark
   
   return (
-    <Layout>
+    <Layout data={promo}>
       <AutoDealerPageTemplate
-        title={promo.frontmatter.title}
+        title={promo.title}
+        data={data}
       />
     </Layout>
   )
@@ -31,6 +32,25 @@ export const AutoDealerQuery = graphql`
     markdownRemark(id: { eq: $id }) {
       frontmatter {
         title
+        header {
+          headerBgColor
+          headerLogos {
+            alt
+            image {
+              childImageSharp {
+                fluid(maxWidth: 300, quality: 100) {
+                  ...GatsbyImageSharpFluid_tracedSVG
+                }
+              }
+            }
+          }
+          headerText {
+            address
+            phone1
+            phone2
+          }
+          headerTxtColor
+        }
       }
     }
   }

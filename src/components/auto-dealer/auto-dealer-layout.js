@@ -15,29 +15,18 @@ import GlobalStyle from '../globalstyle'
 import Header from './auto-dealer-header'
 import Footer from './auto-dealer-footer'
 
-const Layout = ({ children }) => (
-  <StaticQuery
-    query={graphql`
-      query AutoDealerTitleQuery {
-        site {
-          siteMetadata {
-            title
-          }
-        }
-      }
-    `}
-    render={data => (
-      <ThemeProvider theme={theme}>
-        <>
-          <Header siteTitle={data.site.siteMetadata.title} />
-          <GlobalStyle />
-          <main role="main">{children}</main>
-          <Footer />
-        </>
-      </ThemeProvider>
-    )}
-  />
-)
+const Layout = ({ children, data }) => {
+  return (
+    <ThemeProvider theme={theme}>
+      <>
+        <Header data={data} />
+        <GlobalStyle />
+        <main role="main">{children}</main>
+        <Footer data={data} />
+      </>
+    </ThemeProvider>
+  )
+}
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,

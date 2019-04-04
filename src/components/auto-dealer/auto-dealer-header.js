@@ -2,13 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-import lincolnLogo from '../../images/lincoln_logo_white.svg'
-import dealerLogo from '../../images/whiteoak_lincoln.png'
+import PreviewCompatibleImage from '../previewcompatibleimage'
 import mapPin from '../../images/map-pin-white.svg'
 import phone from '../../images/phone-white.svg'
 
 const StyledHeader = styled.header`
-  background: ${props => props.theme.black};
+  background: ${props => props.header.headerBgColor};
 
   .logo-columns > .column {
     display: flex;
@@ -37,7 +36,7 @@ const StyledHeader = styled.header`
       position: relative;
       flex-shrink: 1;
       white-space: nowrap;
-      color: ${props => props.theme.white};
+      color: ${props => props.header.headerTxtColor};
       
       &:nth-child(1)::before,
       &:nth-child(2)::before {
@@ -89,31 +88,35 @@ const StyledHeader = styled.header`
   }
 `
 
-const Header = ({ siteTitle }) => (
-  <StyledHeader className="section">
-    <div className="container">
-      <div className="columns">    
-        <div className="column is-3">
-          <div className="columns logo-columns">
-            <div className="column lincoln-logo">
-              <img src={lincolnLogo} alt="Lincoln Logo" />
-            </div>
-            <div className="column bayfield-logo">
-              <img src={dealerLogo} alt="Bayfield Lincoln" />
+const Header = ({ data }) => {
+  const header = data.header
+  return (
+    <StyledHeader className="section" header={header} >
+      <div className="container">
+        <div className="columns">    
+          <div className="column is-3">
+            <div className="columns logo-columns">
+              {header.headerLogos.map(headerLogo => {
+                return (
+                  <div key={headerLogo.alt} className="column header-logo">
+                    <PreviewCompatibleImage imageInfo={headerLogo} />
+                  </div>
+                )
+              })}
             </div>
           </div>
-        </div>
-        <div className="column is-9">
-          <ul className="header-info-right">
-            <li>3285 MAVIS RD. MISSISSAUGA, ON, L5C 1T7</li>
-            <li>Sales: (905) 270-8210</li>
-            <li>Service: (877) 868-1812</li>
-          </ul>
+          <div className="column is-9">
+            <ul className="header-info-right">
+              <li>{header.headerText.address}</li>
+              <li>Sales: (905) 270-8210</li>
+              <li>Service: (877) 868-1812</li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
-  </StyledHeader>
-)
+    </StyledHeader>
+  )
+}
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
