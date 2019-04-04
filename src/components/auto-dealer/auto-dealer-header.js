@@ -96,10 +96,10 @@ const Header = ({ data }) => {
         <div className="columns">    
           <div className="column is-3">
             <div className="columns logo-columns">
-              {header.headerLogos.map(headerLogo => {
+              {header.headerLogos.map((headerLogo, i) => {
                 return (
-                  <div key={headerLogo.alt} className="column header-logo">
-                    <PreviewCompatibleImage imageInfo={headerLogo} />
+                  <div key={headerLogo.logo.alt} className={`column header-logo header-logo-${i + 1}`}>
+                    <PreviewCompatibleImage imageInfo={headerLogo.logo} />
                   </div>
                 )
               })}

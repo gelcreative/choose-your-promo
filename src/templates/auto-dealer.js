@@ -37,6 +37,10 @@ export const AutoDealerQuery = graphql`
             logo {
               alt
               image {
+                publicURL
+                internal {
+                  mediaType
+                }
                 childImageSharp {
                   fluid(maxWidth: 300, quality: 100) {
                     ...GatsbyImageSharpFluid_tracedSVG

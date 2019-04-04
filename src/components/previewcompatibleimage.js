@@ -5,6 +5,7 @@ import Img from 'gatsby-image'
 const PreviewCompatibleImage = ({ imageInfo }) => {
   const imageStyle = { borderRadius: '5px' }
   const { alt = '', childImageSharp, image } = imageInfo
+  const { mediaType } = imageInfo.image.internal
 
   if (!!image && !!image.childImageSharp) {
     return (
@@ -18,6 +19,10 @@ const PreviewCompatibleImage = ({ imageInfo }) => {
 
   if (!!image && typeof image === 'string')
     return <img style={imageStyle} src={image} alt={alt} />
+
+  // Handle SVG
+  if (!!image && mediaType === 'image/svg+xml')
+    return <img style={imageStyle} src={image.publicURL} />
 
   return null
 }
