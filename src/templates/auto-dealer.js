@@ -27,7 +27,7 @@ const AutoDealerPage = ({ data }) => {
 export default AutoDealerPage
 
 export const AutoDealerQuery = graphql`
-  query AutoDealer($id: String!) {
+  query AutoDealer($id: String) {
     markdownRemark(id: { eq: $id }) {
       frontmatter {
         title

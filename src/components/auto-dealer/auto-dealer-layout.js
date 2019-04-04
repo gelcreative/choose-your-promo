@@ -18,7 +18,7 @@ import Footer from './auto-dealer-footer'
 const Layout = ({ children }) => (
   <StaticQuery
     query={graphql`
-      query SiteTitleQuery {
+      query AutoDealerTitleQuery {
         site {
           siteMetadata {
             title
