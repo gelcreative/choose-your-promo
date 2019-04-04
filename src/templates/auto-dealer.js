@@ -56,6 +56,11 @@ export const AutoDealerQuery = graphql`
           }
           headerTxtColor
         }
+        footer {
+          footerBgColor
+          footerTermsTxt
+          footerTxtColor
+        }
       }
     }
   }
