@@ -108,8 +108,8 @@ const Header = ({ data }) => {
           <div className="column is-9">
             <ul className="header-info-right">
               <li>{header.headerText.address}</li>
-              <li>Sales: (905) 270-8210</li>
-              <li>Service: (877) 868-1812</li>
+              <li>Sales: {header.headerText.phone1}</li>
+              <li>Service: {header.headerText.phone2}</li>
             </ul>
           </div>
         </div>
