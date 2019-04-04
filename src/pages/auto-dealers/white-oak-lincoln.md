@@ -5,10 +5,12 @@ date: 2019-04-04T13:43:29.169Z
 header:
   headerBgColor: '#000000'
   headerLogos:
-    - alt: Lincoln Logo
-      image: /img/lincoln_logo_white.svg
-    - alt: White Oak Lincoln
-      image: /img/whiteoak_lincoln.png
+    - logo:
+        alt: Lincoln Logo
+        image: /img/lincoln_logo_white.svg
+    - logo:
+        alt: Whiteoak Lincoln
+        image: /img/whiteoak_lincoln.png
   headerText:
     address: '3285 MAVIS RD. MISSISSAUGA, ON, L5C 1T7'
     phone1: (905) 270-8210
