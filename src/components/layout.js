@@ -12,7 +12,7 @@ import { ThemeProvider } from 'styled-components'
 
 import theme from './theme'
 import GlobalStyle from './globalstyle'
-import Header from "./header"
+import Header from './header'
 import Footer from './footer'
 
 const Layout = ({ children }) => (

@@ -1,8 +1,8 @@
-import React from "react"
+import React from 'react'
 import { graphql } from 'gatsby'
 
-import Layout from "../components/auto-dealer/auto-dealer-layout"
-import SEO from "../components/seo"
+import Layout from '../components/auto-dealer/auto-dealer-layout'
+import SEO from '../components/seo'
 
 export const AutoDealerPageTemplate = ({
   title,

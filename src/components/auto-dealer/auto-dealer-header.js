@@ -1,11 +1,11 @@
-import React from "react"
-import PropTypes from "prop-types"
+import React from 'react'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-import lincolnLogo from '../images/lincoln_logo_white.svg'
-import dealerLogo from '../images/whiteoak_lincoln.png'
-import mapPin from '../images/map-pin-white.svg'
-import phone from '../images/phone-white.svg'
+import lincolnLogo from '../../images/lincoln_logo_white.svg'
+import dealerLogo from '../../images/whiteoak_lincoln.png'
+import mapPin from '../../images/map-pin-white.svg'
+import phone from '../../images/phone-white.svg'
 
 const StyledHeader = styled.header`
   background: ${props => props.theme.black};
