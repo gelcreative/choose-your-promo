@@ -66,6 +66,10 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Open Sans', sans-serif;
     font-size: 1.6rem;
   }
+
+  .gatsby-image-wrapper {
+    width: 100%;
+  }
 `
 
 export default GlobalStyle
