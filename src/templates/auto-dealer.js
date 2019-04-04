@@ -1,13 +1,31 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import styled from 'styled-components'
 
 import Layout from '../components/auto-dealer/auto-dealer-layout'
 
+const StyledArticle = styled.article`
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background: linear-gradient(${props => props.main.bgGradient.topColor}, ${props => props.main.bgGradient.bottomColor});
+`
+
 export const AutoDealerPageTemplate = ({
-  title,
+  promo,
 }) => {
+
+  const { main } = promo
+
   return (
-    <h1>{title}</h1>
+    <StyledArticle className="section" main={main}>
+      <div className="container">
+        <div className="columns">
+          <div className="column">
+            <h1>hi</h1>
+          </div>
+        </div>
+      </div>
+    </StyledArticle>
   )
 }
 
@@ -17,8 +35,7 @@ const AutoDealerPage = ({ data }) => {
   return (
     <Layout data={promo}>
       <AutoDealerPageTemplate
-        title={promo.title}
-        data={data}
+        promo={promo}
       />
     </Layout>
   )
@@ -55,6 +72,57 @@ export const AutoDealerQuery = graphql`
             phone2
           }
           headerTxtColor
+        }
+        main {
+          bgGradient {
+            bottomColor
+            topColor
+          }
+          bgImage {
+            alt
+            image {
+              childImageSharp {
+                fluid(maxWidth: 1000, quality: 100) {
+                  ...GatsbyImageSharpFluid_tracedSVG
+                }
+              }
+            }
+          }
+          bodyTxtColor
+          buttons {
+            buttonColor
+            buttonTxtColor
+          }
+          promos {
+            promoOne {
+              disclaimer
+              promoImage {
+                alt
+                image {
+                  childImageSharp {
+                    fluid(maxWidth: 600, quality: 100) {
+                      ...GatsbyImageSharpFluid_tracedSVG
+                    }
+                  }
+                }
+              }
+              promoText
+            }
+            promoTwo {
+              disclaimer
+              promoImage {
+                alt
+                image {
+                  childImageSharp {
+                    fluid(maxWidth: 600, quality: 100) {
+                      ...GatsbyImageSharpFluid_tracedSVG
+                    }
+                  }
+                }
+              }
+              promoText
+            }
+          }
         }
         footer {
           footerBgColor
