@@ -3,11 +3,16 @@ import { graphql } from 'gatsby'
 import styled from 'styled-components'
 
 import Layout from '../components/auto-dealer/auto-dealer-layout'
+import PreviewCompatibleImage from '../components/previewcompatibleimage'
 
 const StyledArticle = styled.article`
   padding-top: 100px;
   padding-bottom: 100px;
   background: linear-gradient(${props => props.main.bgGradient.topColor}, ${props => props.main.bgGradient.bottomColor});
+
+  .promo-column {
+    max-width: 250px
+  }
 `
 
 export const AutoDealerPageTemplate = ({
@@ -20,8 +25,20 @@ export const AutoDealerPageTemplate = ({
     <StyledArticle className="section" main={main}>
       <div className="container">
         <div className="columns">
-          <div className="column">
-            <h1>hi</h1>
+          <div className="column  is-10 is-offset-2">
+            <div>
+              <div className="columns">
+                <div className="column promo-column promo-column-1">
+                  <PreviewCompatibleImage imageInfo={main.promos.promoOne.promoImage} />
+                </div>
+                <div className="column has-text-centered">
+                  <h1>Choose Your <span className="promo-heading-emphasis">Promo</span> <span className="visually-hidden">from {promo.title}</span></h1>
+                </div>
+                <div className="column promo-column promo-column-2">
+                  <PreviewCompatibleImage imageInfo={main.promos.promoTwo.promoImage} />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
