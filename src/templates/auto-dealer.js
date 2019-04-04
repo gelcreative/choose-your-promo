@@ -2,7 +2,6 @@ import React from 'react'
 import { graphql } from 'gatsby'
 
 import Layout from '../components/auto-dealer/auto-dealer-layout'
-import SEO from '../components/seo'
 
 export const AutoDealerPageTemplate = ({
   title,
@@ -35,11 +34,13 @@ export const AutoDealerQuery = graphql`
         header {
           headerBgColor
           headerLogos {
-            alt
-            image {
-              childImageSharp {
-                fluid(maxWidth: 300, quality: 100) {
-                  ...GatsbyImageSharpFluid_tracedSVG
+            logo {
+              alt
+              image {
+                childImageSharp {
+                  fluid(maxWidth: 300, quality: 100) {
+                    ...GatsbyImageSharpFluid_tracedSVG
+                  }
                 }
               }
             }
