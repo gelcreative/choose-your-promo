@@ -13,14 +13,10 @@ const StyledHeader = styled.header`
     display: flex;
     align-items: center;
 
-    &.lincoln-logo img {
-      width: 150px;
-      max-width: 100%;
-    }
-
-    &.bayfield-logo img {
-      width: 200px;
-      max-width: 100%;
+    &.header-logo > img,
+    &.header-logo > .gatsby-image-wrapper {
+      max-width: 300px;
+      width: 100%;
     }
   }
 
@@ -84,6 +80,9 @@ const StyledHeader = styled.header`
 
     .header-info-right {
       flex-direction: column;
+      li {
+        white-space: normal;
+      }
     }
   }
 `
