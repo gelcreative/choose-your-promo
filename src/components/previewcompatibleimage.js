@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Img from 'gatsby-image'
 
 const PreviewCompatibleImage = ({ imageInfo }) => {
-  const imageStyle = { borderRadius: '5px' }
+  const imageStyle = { borderRadius: '0' }
   const { alt = '', childImageSharp, image } = imageInfo
   const { mediaType } = imageInfo.image.internal
 
@@ -22,7 +22,7 @@ const PreviewCompatibleImage = ({ imageInfo }) => {
 
   // Handle SVG
   if (!!image && mediaType === 'image/svg+xml')
-    return <img style={imageStyle} src={image.publicURL} />
+    return <img style={imageStyle} src={image.publicURL} alt={alt} />
 
   return null
 }
