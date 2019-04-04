@@ -3,7 +3,7 @@ templateKey: auto-dealer
 title: White Oak Lincoln
 date: 2019-04-04T13:43:29.169Z
 header:
-  headerBgColor: red
+  headerBgColor: '#000000'
   headerLogos:
     - alt: Lincoln Logo
       image: /img/lincoln_logo_white.svg
