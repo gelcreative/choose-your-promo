@@ -22,7 +22,7 @@ main:
     topColor: '#d1d1d1'
   bgImage:
     alt: Lincoln Nautilus
-    image: /img/whiteoaklincoln_offer1.png
+    image: /img/dwc-2019-chooseyourpromo-landing-page-heroimage-nautilus.png
   bodyTxtColor: '#000000'
   buttons:
     buttonColor: '#676767'
