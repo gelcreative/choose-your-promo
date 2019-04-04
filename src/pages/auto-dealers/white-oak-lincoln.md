@@ -6,9 +6,6 @@ header:
   headerBgColor: '#000000'
   headerLogos:
     - logo:
-        alt: Lincoln Logo
-        image: /img/lincoln_logo_white.svg
-    - logo:
         alt: Whiteoak Lincoln
         image: /img/whiteoak_lincoln.png
   headerText:
