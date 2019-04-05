@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'gatsby'
 import styled from 'styled-components'
 import ReactHtmlParser from 'react-html-parser'
 
@@ -11,6 +12,11 @@ const StyledDealerForm = styled.section`
   h1 {
     font-size: 3.1rem;
     text-transform: uppercase;
+  }
+
+  a {
+    text-decoration: underline;
+    color: inherit;
   }
 
   button {
@@ -89,13 +95,15 @@ const StyledDealerForm = styled.section`
     white-space: normal;
   }
 
+  .button,
   input[type="submit"] {
     font-size: 2rem;
     color: ${props => props.main.buttons.buttonTxtColor};
     background-color: ${props => props.main.buttons.buttonColor};
     border-radius: 15px;
     border: none;
-    padding: 1em;
+    padding: 1.5em;
+    text-decoration: none;
   }
 
   @media (max-width: 768px) {
@@ -122,12 +130,14 @@ const StyledDealerForm = styled.section`
       }
     }
 
+    .button,
     input {
       width: 100%;
     }
   }
 
   @media (min-width: 769px) {
+    .button,
     input[type="submit"] {
       width: 90%;
     }
@@ -238,6 +248,16 @@ class AutoDealerForm extends Component {
                 <div className="thank-you-image">
                   <PreviewCompatibleImage imageInfo={thanks.bgImage} />
                 </div>
+              </div>
+            </div>
+            <div className="columns">
+              <div className="column">
+                <a href={thanks.button.buttonLink} target="_blank" rel="noopener noreferrer" className="button">{thanks.button.buttonText}</a>
+              </div>
+            </div>
+            <div className="columns">
+              <div className="column">
+                <Link to={'/'}>learn more about chooseyourpromo.com</Link>
               </div>
             </div>
           </div>
