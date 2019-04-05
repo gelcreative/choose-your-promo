@@ -202,7 +202,7 @@ class AutoDealerForm extends Component {
                 <h1>Receive Your {ReactHtmlParser(this.state.promo)}</h1>
               </div>
             </div>
-            <form onSubmit={this.handleSubmit} netlify>
+            <form onSubmit={this.handleSubmit} name="promoForm" data-netlify="true">
               <div className="columns">
                 <div className="column">
                   <label htmlFor="first-name" className="visually-hidden">Your First Name</label>
