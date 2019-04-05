@@ -8,7 +8,13 @@ const StyledDealerForm = styled.section`
 `
 
 class AutoDealerForm extends Component {
-
+  constructor(props) {
+    super(props)
+    this.state = {
+      promo: '',
+      isSubmitted: false,
+    }
+  }
 
   render() {
     const { main } = this.props.promo
