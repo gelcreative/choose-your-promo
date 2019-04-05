@@ -10,7 +10,7 @@ const StyledArticle = styled.article`
   padding-bottom: 100px;
   background: linear-gradient(${props => props.main.bgGradient.topColor}, ${props => props.main.bgGradient.bottomColor});
   position: relative;
-  min-height: 70vh;
+  /* min-height: 70vh; */
 
   @media (min-width: 769px) {
     &::after {

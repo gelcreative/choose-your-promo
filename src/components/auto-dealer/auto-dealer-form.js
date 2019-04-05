@@ -8,6 +8,10 @@ import braces from '../../images/braces.svg'
 const StyledDealerForm = styled.section`
   position: relative;
   z-index: 1;
+  h1 {
+    font-size: 3.1rem;
+  }
+
   button {
     color: ${props => props.main.buttons.buttonTxtColor};
     background-color: ${props => props.main.buttons.buttonColor};
@@ -65,6 +69,16 @@ const StyledDealerForm = styled.section`
     }
   }
 
+  input[type="checkbox"] {
+    vertical-align: middle;
+    margin-right: 1em;
+  }
+
+  input[type="checkbox"] + label {
+    font-size: 1.2rem;
+    white-space: normal;
+  }
+
   @media (max-width: 768px) {
     &.columns {
       display: flex;
@@ -100,11 +114,14 @@ class AutoDealerForm extends Component {
     }
   }
 
+  stripHtml(html) {
+    const stripped = html.replace(/(<([^>]+)>)/ig, '')
+    return stripped
+  }
+
   buttonClick(promo) {
-    // Remove html tags from promo text
-    const sanitizedPromo = promo.replace(/(<([^>]+)>)/ig, '')
     this.setState({
-      promo: sanitizedPromo
+      promo
     })
   }
 
@@ -113,7 +130,43 @@ class AutoDealerForm extends Component {
 
     if (this.state.promo !== '' && this.state.isSubmitted === false) {
       return (
-        <h1>Hieee!</h1>
+        <StyledDealerForm className="columns is-centered" main={main}>
+          <div className="column has-text-centered">
+            <div className="columns">
+              <div className="column">
+                <h1>Receive Your {ReactHtmlParser(this.state.promo)}</h1>
+              </div>
+            </div>
+            <form action="">
+              <div className="columns">
+                <div className="column">
+                  <label htmlFor="first-name" className="visually-hidden">Your First Name</label>
+                  <input type="text" placeholder="First Name" id="first-name" name="first-name" />
+                </div>
+                <div className="column">
+                  <label htmlFor="last-name" className="visually-hidden">Your Last Name</label>
+                  <input type="text" placeholder="Last Name" id="last-name" name="last-name" />
+                </div>
+                <div className="column">
+                  <label htmlFor="email" className="visually-hidden">Your Email</label>
+                  <input type="email" placeholder="Email" id="email" name="email" />
+                </div>
+              </div>
+              <div className="columns">
+                <div className="column is-narrow">
+                  <input type="checkbox" id="receive-dealer-offers" name="receive-dealer-offers" />
+                  <label htmlFor="receive-dealer-offers">I would like to receive future offers from {this.props.promo.title}</label>
+                </div>
+                <div className="column is-narrow">
+                  <input type="checkbox" id="receive-choose-your-promo-offers" name="receive-choose-your-promo-offers" />
+                  <label htmlFor="receive-choose-your-promo-offers">I would like to receive future promotions and offers from chooseyourpromo.com</label>
+                </div>
+              </div>
+            </form>
+            <input type="submit" value="Claim my promo" />
+            <input type="hidden" value={this.stripHtml(this.state.promo)} />
+          </div>
+        </StyledDealerForm>
       )
     } else if (this.state.promo !== '' && this.state.isSubmitted === true) {
       return (
