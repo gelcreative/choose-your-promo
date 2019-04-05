@@ -30,8 +30,7 @@ const StyledDealerForm = styled.section`
     display: flex;
     align-items: center;
     justify-content: center;
-    background: center no-repeat url(${braces});
-    background-size: 60%;
+    position: relative;
     h1 {
       font-size: 2.8rem;
       line-height: 1.5;
@@ -39,6 +38,16 @@ const StyledDealerForm = styled.section`
         font-size: 4.8rem;
         font-weight: 600;
       }
+    }
+    .brackets {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
     }
   }
 
@@ -58,7 +67,12 @@ const StyledDealerForm = styled.section`
       display: flex;
       align-items: center;
       justify-content: space-between;
-      flex-direction: column;
+      flex-wrap: wrap;
+      /* flex-direction: column; */
+      .column {
+        flex: 1 1 600px;
+      }
+
       .heading-column {
         order: 1;
       }
@@ -99,6 +113,7 @@ class AutoDealerForm extends Component {
         </div>
         <div className="column has-text-centered heading-column">
           <h1>Choose Your <br /><span className="promo-heading-emphasis">Promo</span> <span className="visually-hidden">from {this.props.promo.title}</span></h1>
+          <img className="brackets" src={braces} aria-hidden="true" />
         </div>
         <div className="column promo-column promo-column-2 has-text-centered">
           <div className="promo-image-container">
