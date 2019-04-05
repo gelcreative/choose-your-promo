@@ -6,6 +6,8 @@ import PreviewCompatibleImage from '../previewcompatibleimage'
 import braces from '../../images/braces.svg'
 
 const StyledDealerForm = styled.section`
+  position: relative;
+  z-index: 1;
   button {
     color: ${props => props.main.buttons.buttonTxtColor};
     background-color: ${props => props.main.buttons.buttonColor};
@@ -109,32 +111,42 @@ class AutoDealerForm extends Component {
   render() {
     const { main } = this.props.promo
 
-    return (
-      <StyledDealerForm className="columns is-centered" main={main}>
-        <div className="column promo-column promo-column-1 has-text-centered">
-          <div className="promo-image-container">
-            <PreviewCompatibleImage imageInfo={main.promos.promoOne.promoImage} />
+    if (this.state.promo !== '' && this.state.isSubmitted === false) {
+      return (
+        <h1>Hieee!</h1>
+      )
+    } else if (this.state.promo !== '' && this.state.isSubmitted === true) {
+      return (
+        <h1>Thankssss!</h1>
+      )
+    } else {
+      return (
+        <StyledDealerForm className="columns is-centered" main={main}>
+          <div className="column promo-column promo-column-1 has-text-centered">
+            <div className="promo-image-container">
+              <PreviewCompatibleImage imageInfo={main.promos.promoOne.promoImage} />
+            </div>
+            <button className="promo-button" onClick={() => this.buttonClick(main.promos.promoOne.promoText)}>
+              {ReactHtmlParser(main.promos.promoOne.promoText)}
+            </button>
+            <small>{main.promos.promoOne.disclaimer}</small>
           </div>
-          <button className="promo-button" onClick={() => this.buttonClick(main.promos.promoOne.promoText)}>
-            {ReactHtmlParser(main.promos.promoOne.promoText)}
-          </button>
-          <small>{main.promos.promoOne.disclaimer}</small>
-        </div>
-        <div className="column has-text-centered heading-column">
-          <h1>Choose Your <br /><span className="promo-heading-emphasis">Promo</span> <span className="visually-hidden">from {this.props.promo.title}</span></h1>
-          <img className="brackets" src={braces} aria-hidden="true" alt="braces" />
-        </div>
-        <div className="column promo-column promo-column-2 has-text-centered">
-          <div className="promo-image-container">
-            <PreviewCompatibleImage imageInfo={main.promos.promoTwo.promoImage} />
+          <div className="column has-text-centered heading-column">
+            <h1>Choose Your <br /><span className="promo-heading-emphasis">Promo</span> <span className="visually-hidden">from {this.props.promo.title}</span></h1>
+            <img className="brackets" src={braces} aria-hidden="true" alt="braces" />
           </div>
-          <button className="promo-button" onClick={() => this.buttonClick(main.promos.promoTwo.promoText)}>
-            {ReactHtmlParser(main.promos.promoTwo.promoText)}
-          </button>
-          <small>{main.promos.promoTwo.disclaimer}</small>
-        </div>
-      </StyledDealerForm>
-    )
+          <div className="column promo-column promo-column-2 has-text-centered">
+            <div className="promo-image-container">
+              <PreviewCompatibleImage imageInfo={main.promos.promoTwo.promoImage} />
+            </div>
+            <button className="promo-button" onClick={() => this.buttonClick(main.promos.promoTwo.promoText)}>
+              {ReactHtmlParser(main.promos.promoTwo.promoText)}
+            </button>
+            <small>{main.promos.promoTwo.disclaimer}</small>
+          </div>
+        </StyledDealerForm>
+      )
+    }
   }
 }
 

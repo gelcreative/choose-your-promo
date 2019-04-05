@@ -9,6 +9,21 @@ const StyledArticle = styled.article`
   padding-top: 100px;
   padding-bottom: 100px;
   background: linear-gradient(${props => props.main.bgGradient.topColor}, ${props => props.main.bgGradient.bottomColor});
+  position: relative;
+  min-height: 70vh;
+
+  @media (min-width: 769px) {
+    &::after {
+      content: '';
+      background: center no-repeat url(${props => props.main.bgImage.image.childImageSharp ? props.main.bgImage.image.childImageSharp.fluid.src : props.main.bgImage.image});
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: -80%;
+      bottom: 0;
+      z-index: 0;
+    }
+  }
 `
 
 export const AutoDealerPageTemplate = ({
