@@ -35,13 +35,13 @@ main:
       promoImage:
         alt: Lincoln MKX1
         image: /img/car-with-square.png
-      promoText: <b>$1500</b> Trade Bonus
+      promoText: <strong>$1500</strong> Trade Bonus
     promoTwo:
       disclaimer: For all eligible customers towards any Service Centre Purchase
       promoImage:
         alt: Tires Promo Image
         image: /img/tires-with-square.png
-      promoText: <b>15% OFF</b> Your Next Service
+      promoText: <strong>15% OFF</strong> Your Next Service
 footer:
   footerBgColor: '#000000'
   footerTermsTxt: >-
