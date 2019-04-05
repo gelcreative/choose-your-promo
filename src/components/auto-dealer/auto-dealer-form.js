@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 import PreviewCompatibleImage from '../previewcompatibleimage'
 import braces from '../../images/braces.svg'
+import markdownToHtml from '../../util/markdownToHtml'
 
 const StyledDealerForm = styled.section`
   button {
@@ -109,7 +110,7 @@ class AutoDealerForm extends Component {
           <button className="promo-button">
             {main.promos.promoOne.promoText}
           </button>
-          <small>{main.promos.promoOne.disclaimer}</small>
+          <small>{markdownToHtml(main.promos.promoOne.disclaimer)}</small>
         </div>
         <div className="column has-text-centered heading-column">
           <h1>Choose Your <br /><span className="promo-heading-emphasis">Promo</span> <span className="visually-hidden">from {this.props.promo.title}</span></h1>
@@ -120,7 +121,7 @@ class AutoDealerForm extends Component {
             <PreviewCompatibleImage imageInfo={main.promos.promoTwo.promoImage} />
           </div>
           <button className="promo-button">
-            {main.promos.promoTwo.promoText}
+            {markdownToHtml(main.promos.promoTwo.promoText)}
           </button>
           <small>{main.promos.promoTwo.disclaimer}</small>
         </div>
