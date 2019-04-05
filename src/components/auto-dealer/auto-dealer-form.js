@@ -94,6 +94,7 @@ const StyledDealerForm = styled.section`
     color: ${props => props.main.buttons.buttonTxtColor};
     background-color: ${props => props.main.buttons.buttonColor};
     border-radius: 15px;
+    border: none;
     padding: 1em;
   }
 
@@ -137,6 +138,9 @@ class AutoDealerForm extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      firstName: '',
+      lastName: '',
+      email: '',
       promo: '',
       isSubmitted: false,
     }
