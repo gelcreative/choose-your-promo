@@ -67,6 +67,12 @@ const GlobalStyle = createGlobalStyle`
     font-size: 1.6rem;
   }
 
+  b,
+  strong {
+    font-weight: bold;
+    color: inherit;
+  }
+
   .gatsby-image-wrapper {
     width: 100%;
   }
