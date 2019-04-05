@@ -9,10 +9,6 @@ const StyledArticle = styled.article`
   padding-top: 100px;
   padding-bottom: 100px;
   background: linear-gradient(${props => props.main.bgGradient.topColor}, ${props => props.main.bgGradient.bottomColor});
-
-  .promo-column {
-    max-width: 250px
-  }
 `
 
 export const AutoDealerPageTemplate = ({
