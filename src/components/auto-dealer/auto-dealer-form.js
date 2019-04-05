@@ -98,6 +98,14 @@ class AutoDealerForm extends Component {
     }
   }
 
+  buttonClick(promo) {
+    // Remove html tags from promo text
+    const sanitizedPromo = promo.replace(/(<([^>]+)>)/ig, '')
+    this.setState({
+      promo: sanitizedPromo
+    })
+  }
+
   render() {
     const { main } = this.props.promo
 
@@ -107,7 +115,7 @@ class AutoDealerForm extends Component {
           <div className="promo-image-container">
             <PreviewCompatibleImage imageInfo={main.promos.promoOne.promoImage} />
           </div>
-          <button className="promo-button">
+          <button className="promo-button" onClick={() => this.buttonClick(main.promos.promoOne.promoText)}>
             {ReactHtmlParser(main.promos.promoOne.promoText)}
           </button>
           <small>{main.promos.promoOne.disclaimer}</small>
@@ -120,7 +128,7 @@ class AutoDealerForm extends Component {
           <div className="promo-image-container">
             <PreviewCompatibleImage imageInfo={main.promos.promoTwo.promoImage} />
           </div>
-          <button className="promo-button">
+          <button className="promo-button" onClick={() => this.buttonClick(main.promos.promoTwo.promoText)}>
             {ReactHtmlParser(main.promos.promoTwo.promoText)}
           </button>
           <small>{main.promos.promoTwo.disclaimer}</small>
