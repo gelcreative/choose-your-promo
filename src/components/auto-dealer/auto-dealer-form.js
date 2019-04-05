@@ -10,6 +10,7 @@ const StyledDealerForm = styled.section`
   z-index: 1;
   h1 {
     font-size: 3.1rem;
+    text-transform: uppercase;
   }
 
   button {
@@ -69,6 +70,15 @@ const StyledDealerForm = styled.section`
     }
   }
 
+  input[type="text"],
+  input[type="email"] {
+    font-size: 2rem;
+    text-align: center;
+    border-radius: 15px;
+    border: none;
+    padding: 1em
+  }
+
   input[type="checkbox"] {
     vertical-align: middle;
     margin-right: 1em;
@@ -77,6 +87,14 @@ const StyledDealerForm = styled.section`
   input[type="checkbox"] + label {
     font-size: 1.2rem;
     white-space: normal;
+  }
+
+  input[type="submit"] {
+    font-size: 2rem;
+    color: ${props => props.main.buttons.buttonTxtColor};
+    background-color: ${props => props.main.buttons.buttonColor};
+    border-radius: 15px;
+    padding: 1em;
   }
 
   @media (max-width: 768px) {
@@ -101,6 +119,16 @@ const StyledDealerForm = styled.section`
       .promo-column-2 {
         order: 3;
       }
+    }
+
+    input {
+      width: 100%;
+    }
+  }
+
+  @media (min-width: 769px) {
+    input[type="submit"] {
+      width: 90%;
     }
   }
 `
@@ -163,7 +191,7 @@ class AutoDealerForm extends Component {
                 </div>
               </div>
             </form>
-            <input type="submit" value="Claim my promo" />
+            <input type="submit" value="Claim My Promo" />
             <input type="hidden" value={this.stripHtml(this.state.promo)} />
           </div>
         </StyledDealerForm>
