@@ -3,7 +3,7 @@ import { graphql } from 'gatsby'
 import styled from 'styled-components'
 
 import Layout from '../components/auto-dealer/auto-dealer-layout'
-import PreviewCompatibleImage from '../components/previewcompatibleimage'
+import AutoDealerForm from '../components/auto-dealer/auto-dealer-form'
 
 const StyledArticle = styled.article`
   padding-top: 100px;
@@ -19,26 +19,12 @@ export const AutoDealerPageTemplate = ({
   promo,
 }) => {
 
-  const { main } = promo
-
   return (
-    <StyledArticle className="section" main={main}>
+    <StyledArticle className="section" main={promo.main}>
       <div className="container">
         <div className="columns">
-          <div className="column  is-10 is-offset-2">
-            <div>
-              <div className="columns">
-                <div className="column promo-column promo-column-1">
-                  <PreviewCompatibleImage imageInfo={main.promos.promoOne.promoImage} />
-                </div>
-                <div className="column has-text-centered">
-                  <h1>Choose Your <span className="promo-heading-emphasis">Promo</span> <span className="visually-hidden">from {promo.title}</span></h1>
-                </div>
-                <div className="column promo-column promo-column-2">
-                  <PreviewCompatibleImage imageInfo={main.promos.promoTwo.promoImage} />
-                </div>
-              </div>
-            </div>
+          <div className="column  is-9 is-offset-3">
+            <AutoDealerForm promo={promo} />
           </div>
         </div>
       </div>
