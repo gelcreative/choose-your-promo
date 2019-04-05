@@ -142,8 +142,13 @@ class AutoDealerForm extends Component {
       lastName: '',
       email: '',
       promo: '',
+      dealerOffers: false,
+      promoOffers: false,
       isSubmitted: false,
     }
+
+    this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   stripHtml(html) {
@@ -154,6 +159,23 @@ class AutoDealerForm extends Component {
   buttonClick(promo) {
     this.setState({
       promo
+    })
+  }
+
+  handleChange(e) {
+    const target = e.target
+    const value = target.type === 'checkbox' ? target.checked : target.value
+    const name = target.name
+
+    this.setState({
+      [name]: value
+    })
+  }
+
+  handleSubmit(e) {
+    e.preventDefault()
+    this.setState({
+      isSubmitted: true
     })
   }
 
@@ -169,34 +191,34 @@ class AutoDealerForm extends Component {
                 <h1>Receive Your {ReactHtmlParser(this.state.promo)}</h1>
               </div>
             </div>
-            <form action="">
+            <form onSubmit={this.handleSubmit}>
               <div className="columns">
                 <div className="column">
                   <label htmlFor="first-name" className="visually-hidden">Your First Name</label>
-                  <input type="text" placeholder="First Name" id="first-name" name="first-name" />
+                  <input type="text" placeholder="First Name" id="first-name" name="firstName" onChange={this.handleChange} />
                 </div>
                 <div className="column">
                   <label htmlFor="last-name" className="visually-hidden">Your Last Name</label>
-                  <input type="text" placeholder="Last Name" id="last-name" name="last-name" />
+                  <input type="text" placeholder="Last Name" id="last-name" name="lastName" onChange={this.handleChange} />
                 </div>
                 <div className="column">
                   <label htmlFor="email" className="visually-hidden">Your Email</label>
-                  <input type="email" placeholder="Email" id="email" name="email" />
+                  <input type="email" placeholder="Email" id="email" name="email" onChange={this.handleChange} />
                 </div>
               </div>
               <div className="columns">
                 <div className="column is-narrow">
-                  <input type="checkbox" id="receive-dealer-offers" name="receive-dealer-offers" />
+                  <input type="checkbox" id="receive-dealer-offers" name="dealerOffers" checked={this.state.dealerOffers} onChange={this.handleChange} />
                   <label htmlFor="receive-dealer-offers">I would like to receive future offers from {this.props.promo.title}</label>
                 </div>
                 <div className="column is-narrow">
-                  <input type="checkbox" id="receive-choose-your-promo-offers" name="receive-choose-your-promo-offers" />
+                  <input type="checkbox" id="receive-choose-your-promo-offers" name="promoOffers" checked={this.state.promoOffers} onChange={this.handleChange} />
                   <label htmlFor="receive-choose-your-promo-offers">I would like to receive future promotions and offers from chooseyourpromo.com</label>
                 </div>
               </div>
+              <input type="submit" value="Claim My Promo" />
+              <input type="hidden" value={this.stripHtml(this.state.promo)} />
             </form>
-            <input type="submit" value="Claim My Promo" />
-            <input type="hidden" value={this.stripHtml(this.state.promo)} />
           </div>
         </StyledDealerForm>
       )
