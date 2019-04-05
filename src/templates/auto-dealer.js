@@ -10,7 +10,7 @@ const StyledArticle = styled.article`
   padding-bottom: 100px;
   background: linear-gradient(${props => props.main.bgGradient.topColor}, ${props => props.main.bgGradient.bottomColor});
   position: relative;
-  /* min-height: 70vh; */
+  min-height: 800px;
 
   @media (min-width: 769px) {
     &::after {
@@ -142,6 +142,22 @@ export const AutoDealerQuery = graphql`
           footerBgColor
           footerTermsTxt
           footerTxtColor
+        }
+        submissionConfirmation {
+          bgImage {
+            alt
+            image {
+              childImageSharp {
+                fluid(maxWidth: 1000, quality: 100) {
+                  ...GatsbyImageSharpFluid_tracedSVG
+                }
+              }
+            }
+          }
+          button {
+            buttonLink
+            buttonText
+          }
         }
       }
     }

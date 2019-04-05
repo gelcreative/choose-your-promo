@@ -181,6 +181,7 @@ class AutoDealerForm extends Component {
 
   render() {
     const { main } = this.props.promo
+    const { submissionConfirmation: thanks } = this.props.promo
 
     if (this.state.promo !== '' && this.state.isSubmitted === false) {
       return (
@@ -224,7 +225,23 @@ class AutoDealerForm extends Component {
       )
     } else if (this.state.promo !== '' && this.state.isSubmitted === true) {
       return (
-        <h1>Thankssss!</h1>
+        <StyledDealerForm className="columns is-centered" main={main}>
+          <div className="column has-text-centered">
+            <div className="columns">
+              <div className="column thank-you">
+                <h1>THANK YOU FOR SUBSCRIBING.</h1>
+                <p>Check your inbox for promo details.</p>
+              </div>
+            </div>
+            <div className="columns">
+              <div className="column">
+                <div className="thank-you-image">
+                  <PreviewCompatibleImage imageInfo={thanks.bgImage} />
+                </div>
+              </div>
+            </div>
+          </div>
+        </StyledDealerForm>
       )
     } else {
       return (
