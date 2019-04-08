@@ -1,6 +1,6 @@
 ---
 templateKey: auto-dealer
-title: midlandhonda
+title: Midland Honda
 date: 2019-04-08T16:51:22.816Z
 header:
   headerBgColor: '#f4f4f4'
