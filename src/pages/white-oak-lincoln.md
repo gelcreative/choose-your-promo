@@ -1,6 +1,6 @@
 ---
 templateKey: auto-dealer
-title: White Oak Lincoln
+title: 'White Oak Lincoln '
 date: 2019-04-04T13:43:29.169Z
 header:
   headerBgColor: '#000000'
