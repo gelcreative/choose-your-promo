@@ -25,8 +25,8 @@ main:
     image: /img/midland-honda-background.png
   bodyTxtColor: '#000000'
   buttons:
-    buttonColor: ec1c23
-    buttonTxtColor: '#fffff'
+    buttonColor: '#ec1c23'
+    buttonTxtColor: '#ffffff'
   promos:
     promoOne:
       disclaimer: >-
