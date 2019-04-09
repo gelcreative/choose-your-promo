@@ -13,8 +13,8 @@ header:
         image: /img/midland-honda-logo.png
   headerText:
     address: '868 King Street, Midland, ON, L4R 0B8'
-    phone1: 'Sales: 1 (888) 378-0641'
-    phone2: 'Service: (705) 526-1344'
+    phone1: 1 (888) 378-0641
+    phone2: (705) 526-1344
   headerTxtColor: '#000000'
 main:
   bgGradient:
