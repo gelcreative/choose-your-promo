@@ -25,8 +25,8 @@ main:
     image: /img/midland-honda-background.png
   bodyTxtColor: '#000000'
   buttons:
-    buttonColor: ec1c23
-    buttonTxtColor: '#fffff'
+    buttonColor: '#ec1c23'
+    buttonTxtColor: '#ffffff'
   promos:
     promoOne:
       disclaimer: >-
@@ -45,9 +45,9 @@ main:
         image: /img/promo-2-image.png
       promoText: $250 OFF Chip Guard  & Window Tint Package
 footer:
-  footerBgColor: '#00000'
+  footerBgColor: '#000000'
   footerTermsTxt: '*OAC. See Dealer for details. One coupon per purchase.'
-  footerTxtColor: '#fffff'
+  footerTxtColor: '#ffffff'
 submissionConfirmation:
   bgImage:
     alt: thank you image of 3 Honda vehicles
