@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import PropTypes from "prop-types"
+import MailchimpSubscribe from "../MailchimpSubscribe";
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 import ReactHtmlParser from 'react-html-parser'
@@ -143,6 +145,96 @@ const StyledDealerForm = styled.section`
     }
   }
 `
+// a basic form
+const CustomSignupForm = ({ status, message, onValidated, offer, step, formaction, promoTitle }) => {
+  let email, fname, lname, promo, dealerOffers, promoOffers, dealerName;
+  const submit = () =>
+    email &&
+    fname &&
+    lname &&
+    promo &&
+    dealerOffers &&
+    promoOffers &&
+    email.value.indexOf("@") > -1 &&
+    onValidated({
+      EMAIL: email.value,
+      FNAME: fname.value,
+      LNAME: lname.value,
+      PROMO: promo.value,
+      PROMOS: promoOffers.checked,
+      DEALERS: dealerOffers.checked,
+      DEALERNAME: dealerName.value,
+    });
+ 
+  return (
+    <form onSubmit={formaction} name="promoForm" data-netlify="true">
+      <div className="columns">
+        {status === "sending" && <div style={{ color: "blue" }}>sending...</div>}
+        {status === "error" && (
+          <div
+            style={{ color: "red" }}
+            dangerouslySetInnerHTML={{ __html: message }}
+          />
+        )}
+        {status === "success" && (
+          <div
+            style={{ color: "green" }}
+            dangerouslySetInnerHTML={{ __html: message }}
+          />
+        )}
+        <div className="column">
+          <input
+            style={{ fontSize: "2em", padding: 5 }}
+            ref={node => (fname = node)}
+            type="text"
+            placeholder="First Name"
+          />
+        </div>
+        <div className="column">
+          <input
+            style={{ fontSize: "2em", padding: 5 }}
+            ref={node => (lname = node)}
+            type="text"
+            placeholder="Last Name"
+          />
+        </div>
+        <div className="column">
+          <input
+            style={{ fontSize: "2em", padding: 5 }}
+            ref={node => (email = node)}
+            type="email"
+            placeholder="Email"
+          />
+        </div>
+        <div className="column">
+          <input
+            ref={node => (promo = node)}
+            type="hidden"
+            value={offer}
+          />
+          <input            
+            ref={node => (dealerName = node)}
+            type="hidden"
+            value={promoTitle}
+          />
+        </div>
+      </div>
+      <div className="columns">
+        <div className="column is-narrow">
+          <input type="checkbox" id="receive-dealer-offers" name="dealerOffers" ref={node => (dealerOffers = node)} />
+          <label htmlFor="receive-dealer-offers">I would like to receive future offers from {promoTitle}</label>
+        </div>
+        <div className="column is-narrow">
+          <input type="checkbox" id="receive-choose-your-promo-offers" name="promoOffers" ref={node => (promoOffers = node)} />
+          <label htmlFor="receive-choose-your-promo-offers">I would like to receive future promotions and offers from chooseyourpromo.com</label>
+        </div>
+      </div>
+      <input type="submit" value="Claim My Promo" onClick={submit} />
+      <input type="hidden" value={step}/>
+    
+    </form>
+  );
+};
 
 class AutoDealerForm extends Component {
   constructor(props) {
@@ -192,6 +284,7 @@ class AutoDealerForm extends Component {
   render() {
     const { main } = this.props.promo
     const { submissionConfirmation: thanks } = this.props.promo
+    const url = "https://gelcreative.us20.list-manage.com/subscribe/post?u=82a58f8438d2a92919b416121&amp;id=0826323f30"
 
     if (this.state.promo !== '' && this.state.isSubmitted === false) {
       return (
@@ -202,34 +295,21 @@ class AutoDealerForm extends Component {
                 <h1>Receive Your {ReactHtmlParser(this.state.promo)}</h1>
               </div>
             </div>
-            <form onSubmit={this.handleSubmit} name="promoForm" data-netlify="true">
-              <div className="columns">
-                <div className="column">
-                  <label htmlFor="first-name" className="visually-hidden">Your First Name</label>
-                  <input type="text" placeholder="First Name" id="first-name" name="firstName" onChange={this.handleChange} />
-                </div>
-                <div className="column">
-                  <label htmlFor="last-name" className="visually-hidden">Your Last Name</label>
-                  <input type="text" placeholder="Last Name" id="last-name" name="lastName" onChange={this.handleChange} />
-                </div>
-                <div className="column">
-                  <label htmlFor="email" className="visually-hidden">Your Email</label>
-                  <input type="email" placeholder="Email" id="email" name="email" onChange={this.handleChange} />
-                </div>
-              </div>
-              <div className="columns">
-                <div className="column is-narrow">
-                  <input type="checkbox" id="receive-dealer-offers" name="dealerOffers" checked={this.state.dealerOffers} onChange={this.handleChange} />
-                  <label htmlFor="receive-dealer-offers">I would like to receive future offers from {this.props.promo.title}</label>
-                </div>
-                <div className="column is-narrow">
-                  <input type="checkbox" id="receive-choose-your-promo-offers" name="promoOffers" checked={this.state.promoOffers} onChange={this.handleChange} />
-                  <label htmlFor="receive-choose-your-promo-offers">I would like to receive future promotions and offers from chooseyourpromo.com</label>
-                </div>
-              </div>
-              <input type="submit" value="Claim My Promo" />
-              <input type="hidden" value={this.stripHtml(this.state.promo)} />
-            </form>
+            <MailchimpSubscribe
+              url={url}
+              render={({ subscribe, status, message }) => (
+                <CustomSignupForm
+                  status={status}
+                  message={message}
+                  offer={ReactHtmlParser(this.state.promo)}
+                  step={this.stripHtml(this.state.promo)}
+                  onValidated={formData => subscribe(formData)}
+                  formaction={this.handleSubmit}
+                  currentForm={this.state.promo}
+                  promoTitle={this.props.promo.title}
+                />
+              )}
+            />            
           </div>
         </StyledDealerForm>
       )
