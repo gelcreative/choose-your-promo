@@ -1,14 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-
 import PreviewCompatibleImage from '../previewcompatibleimage'
 import mapPin from '../../images/map-pin-white.svg'
 import phone from '../../images/phone-white.svg'
 
 const StyledHeader = styled.header`
   background: ${props => props.header.headerBgColor};
-
+  a {
+    display:block;
+    width:100%;
+  }
   .logo-columns > .column {
     display: flex;
     align-items: center;
@@ -98,7 +100,7 @@ const Header = ({ data }) => {
               {header.headerLogos.map((headerLogo, i) => {
                 return (
                   <div key={headerLogo.logo.alt} className={`column header-logo header-logo-${i + 1}`}>
-                    <PreviewCompatibleImage imageInfo={headerLogo.logo} />
+                    <a href={window.location.pathname}><PreviewCompatibleImage imageInfo={headerLogo.logo} /></a>
                   </div>
                 )
               })}

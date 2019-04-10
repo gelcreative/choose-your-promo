@@ -14,6 +14,7 @@ const StyledDealerForm = styled.section`
   h1 {
     font-size: 3.1rem;
     text-transform: uppercase;
+    margin-bottom:5px;
   }
 
   a {
@@ -31,6 +32,7 @@ const StyledDealerForm = styled.section`
 
   small {
     font-size: 1.6rem;
+    line-height: 1.5em;
   }
 
   .gatsby-image-wrapper,

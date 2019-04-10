@@ -54,6 +54,6 @@ submissionConfirmation:
     image: /img/thank-you-image.png
   button:
     buttonLink: 'https://www.midlandhonda.com/service/'
-    buttonText: Book an Appointment Now.
+    buttonText: Book an Appointment Now
 ---
 
