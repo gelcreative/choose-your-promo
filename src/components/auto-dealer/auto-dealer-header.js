@@ -100,7 +100,7 @@ const Header = ({ data }) => {
               {header.headerLogos.map((headerLogo, i) => {
                 return (
                   <div key={headerLogo.logo.alt} className={`column header-logo header-logo-${i + 1}`}>
-                    <a href={window.location.pathname}><PreviewCompatibleImage imageInfo={headerLogo.logo} /></a>
+                    <a href='/midlandhonda'><PreviewCompatibleImage imageInfo={headerLogo.logo} /></a>
                   </div>
                 )
               })}
