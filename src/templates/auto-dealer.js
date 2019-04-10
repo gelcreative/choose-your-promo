@@ -11,8 +11,7 @@ const StyledArticle = styled.article`
   background: linear-gradient(${props => props.main.bgGradient.topColor}, ${props => props.main.bgGradient.bottomColor});
   position: relative;
   min-height: 800px;
-
-  @media (min-width: 769px) {
+  @media (min-width: 2000px) {
     &::after {
       content: '';
       background: center no-repeat url(${props => props.main.bgImage.image.childImageSharp ? props.main.bgImage.image.childImageSharp.fluid.src : props.main.bgImage.image});
@@ -20,6 +19,42 @@ const StyledArticle = styled.article`
       top: 0;
       right: 0;
       left: -80%;
+      bottom: 0;
+      z-index: 0;
+    }
+  }
+  @media (min-width: 1600px) and (max-width: 2000px) {
+    &::after {
+      content: '';
+      background: center no-repeat url(${props => props.main.bgImage.image.childImageSharp ? props.main.bgImage.image.childImageSharp.fluid.src : props.main.bgImage.image});
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: -100%;
+      bottom: 0;
+      z-index: 0;
+    }
+  }
+  @media (min-width: 1000px) and (max-width: 1600px) {
+    &::after {
+      content: '';
+      background: center no-repeat url(${props => props.main.bgImage.image.childImageSharp ? props.main.bgImage.image.childImageSharp.fluid.src : props.main.bgImage.image});
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: -130%;
+      bottom: 0;
+      z-index: 0;
+    }
+  }
+  @media (min-width: 769px) and (max-width: 1000px) {
+    &::after {
+      content: '';
+      background: center no-repeat url(${props => props.main.bgImage.image.childImageSharp ? props.main.bgImage.image.childImageSharp.fluid.src : props.main.bgImage.image});
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: -150%;
       bottom: 0;
       z-index: 0;
     }
