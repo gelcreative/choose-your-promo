@@ -19,7 +19,7 @@ main:
     topColor: '#ffffff'
   bgImage:
     alt: Site background image of car
-    image: /img/midland-honda-background.png
+    image: /img/2019-dodge-ram.png
   bodyTxtColor: '#000000'
   buttons:
     buttonColor: '#0d65bf'
@@ -29,7 +29,7 @@ main:
       disclaimer: '*OAC. See dealer for details. One coupon per purchase.'
       promoImage:
         alt: $500 Trade Bonus Image
-        image: /img/promo-2-image.png
+        image: /img/2019-jeep.png
       promoText: $500 TRADE BONUS TOWARDS ANY NEW IN STOCK VEHICLE*
     promoTwo:
       disclaimer: '*OAC. See dealer for details. One coupon per purchase.'
