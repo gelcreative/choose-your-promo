@@ -1,8 +1,8 @@
 ---
 templateKey: auto-dealer
 title: Midland Honda
-dealerEmail: 'steedan@gelcreative.ca'
 date: 2019-04-08T16:51:22.816Z
+dealerEmail: ngagliardi@midlandhonda.com
 header:
   headerBgColor: '#f4f4f4'
   headerLogos:
