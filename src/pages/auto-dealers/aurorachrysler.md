@@ -26,21 +26,21 @@ main:
     buttonTxtColor: '#ffffff'
   promos:
     promoOne:
-      disclaimer: '*OAC. See dealer for details. One coupon per purchase.'
+      disclaimer: 'TOWARDS ANY NEW IN STOCK VEHICLE'
       promoImage:
         alt: $500 Trade Bonus Image
         image: /img/2019-jeep.png
-      promoText: $500 TRADE BONUS TOWARDS ANY NEW IN STOCK VEHICLE*
+      promoText: $500 Trade Bonus
     promoTwo:
-      disclaimer: '*OAC. See dealer for details. One coupon per purchase.'
+      disclaimer: 'TOWARDS ANY EXTENDED WARRANTY WITH VEHICLE PURCHASE'
       promoImage:
         alt: Extended Warranty Bonus Image
         image: /img/tires-with-square.png
-      promoText: $250 BONUS TOWARDS ANY EXTENDED WARRANTY WITH VEHICLE PURCHASE*
+      promoText: $250 Warranty Bonus
 footer:
-  footerBgColor: '#ED813F'
+  footerBgColor: '#F4F4F4'
   footerTermsTxt: '*OAC. See dealer for details. One coupon per purchase.'
-  footerTxtColor: '#ffffff'
+  footerTxtColor: '#000000'
 submissionConfirmation:
   bgImage:
     alt: Thank you image

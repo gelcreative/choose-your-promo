@@ -100,7 +100,7 @@ const Header = ({ data }) => {
               {header.headerLogos.map((headerLogo, i) => {
                 return (
                   <div key={headerLogo.logo.alt} className={`column header-logo header-logo-${i + 1}`}>
-                    <a href='/midlandhonda'><PreviewCompatibleImage imageInfo={headerLogo.logo} /></a>
+                    <a href={data.slug}><PreviewCompatibleImage imageInfo={headerLogo.logo} /></a>
                   </div>
                 )
               })}
@@ -109,8 +109,12 @@ const Header = ({ data }) => {
           <div className="column is-9">
             <ul className="header-info-right">
               <li>{header.headerText.address}</li>
-              <li>Sales: {header.headerText.phone1}</li>
-              <li>Service: {header.headerText.phone2}</li>
+              {header.headerText.phone1.length > 1 &&
+                <li>Sales: {header.headerText.phone1}</li>
+              }
+              {header.headerText.phone2.length > 1 &&
+                <li>Service: {header.headerText.phone2}</li>
+              }
             </ul>
           </div>
         </div>

@@ -86,7 +86,8 @@ const StyledDealerForm = styled.section`
     text-align: center;
     border-radius: 15px;
     border: none;
-    padding: 1em
+    padding: 1em;
+    border: 1px solid #ccc;
   }
 
   input[type="checkbox"] {

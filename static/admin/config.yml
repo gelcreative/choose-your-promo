@@ -11,7 +11,7 @@ collections:
   - name: "autoDealerPages"
     label: "Auto Dealer Pages"
     label_singular: "Auto Dealer Page"
-    folder: "src/pages"
+    folder: "src/pages/auto-dealers"
     create: true
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "auto-dealer"}
