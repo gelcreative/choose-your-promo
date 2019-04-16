@@ -27,13 +27,17 @@ main:
     buttonTxtColor: '#ffffff'
   promos:
     promoOne:
-      disclaimer: TOWARDS ANY NEW IN STOCK VEHICLE
+      disclaimer: >-
+        TOWARDS ANY NEW IN STOCK VEHICLE *OAC. See dealer for details. One
+        coupon per purchase.
       promoImage:
         alt: $500 Trade Bonus Image
         image: /img/2019_chrysler-dodge-challenger.png
       promoText: $500 Trade Bonus
     promoTwo:
-      disclaimer: TOWARDS ANY EXTENDED WARRANTY WITH VEHICLE PURCHASE
+      disclaimer: >-
+        TOWARDS ANY EXTENDED WARRANTY WITH VEHICLE PURCHASE *OAC. See dealer for
+        details. One coupon per purchase.
       promoImage:
         alt: Extended Warranty Bonus Image
         image: /img/chrysler-dodge-jeep-blue.png
