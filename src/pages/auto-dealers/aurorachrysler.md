@@ -1,8 +1,8 @@
 ---
 templateKey: auto-dealer
 title: Aurora Chrysler
-dealerEmail: 'steedan@gelcreative.ca'
 date: 2019-04-15T12:52:05.159Z
+dealerEmail: ac22@aurorachrysler.ca
 header:
   headerBgColor: '#ffffff'
   headerLogos:
