@@ -149,8 +149,8 @@ const StyledDealerForm = styled.section`
   }
 `
 // a basic form
-const CustomSignupForm = ({ status, message, onValidated, offer, step, formaction, promoTitle }) => {
-  let email, fname, lname, promo, dealerOffers, promoOffers, dealerName;
+const CustomSignupForm = ({ status, message, onValidated, offer, step, formaction, promoTitle, dealerEmail }) => {
+  let email, fname, lname, promo, dealerOffers, promoOffers;
   const submit = () =>
     email &&
     fname &&
@@ -166,7 +166,8 @@ const CustomSignupForm = ({ status, message, onValidated, offer, step, formactio
       PROMO: promo.value,
       PROMOS: promoOffers.checked,
       DEALERS: dealerOffers.checked,
-      DEALERNAME: dealerName.value,
+      DEALERNAME: promoTitle,
+      DEALERMAIL: dealerEmail,
     });
  
   return (
@@ -214,12 +215,7 @@ const CustomSignupForm = ({ status, message, onValidated, offer, step, formactio
             ref={node => (promo = node)}
             type="hidden"
             value={offer}
-          />
-          <input            
-            ref={node => (dealerName = node)}
-            type="hidden"
-            value={promoTitle}
-          />
+          />       
         </div>
       </div>
       <div className="columns">
@@ -310,6 +306,7 @@ class AutoDealerForm extends Component {
                   formaction={this.handleSubmit}
                   currentForm={this.state.promo}
                   promoTitle={this.props.promo.title}
+                  dealerEmail={this.props.promo.dealerEmail}
                 />
               )}
             />            

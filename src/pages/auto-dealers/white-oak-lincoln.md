@@ -1,6 +1,7 @@
 ---
 templateKey: auto-dealer
 title: 'White Oak Lincoln '
+dealerEmail: 'steedan@gelcreative.ca'
 date: 2019-04-04T13:43:29.169Z
 header:
   headerBgColor: '#000000'

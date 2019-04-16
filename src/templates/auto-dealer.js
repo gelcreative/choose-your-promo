@@ -97,6 +97,7 @@ export const AutoDealerQuery = graphql`
     markdownRemark(id: { eq: $id }) {
       frontmatter {
         title
+        dealerEmail
         header {
           headerBgColor
           headerLogos {
