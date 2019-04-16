@@ -26,16 +26,16 @@ main:
     buttonTxtColor: '#ffffff'
   promos:
     promoOne:
-      disclaimer: 'TOWARDS ANY NEW IN STOCK VEHICLE'
+      disclaimer: TOWARDS ANY NEW IN STOCK VEHICLE
       promoImage:
         alt: $500 Trade Bonus Image
-        image: /img/2019-jeep.png
+        image: /img/2019_chrysler-dodge-challenger.png
       promoText: $500 Trade Bonus
     promoTwo:
-      disclaimer: 'TOWARDS ANY EXTENDED WARRANTY WITH VEHICLE PURCHASE'
+      disclaimer: TOWARDS ANY EXTENDED WARRANTY WITH VEHICLE PURCHASE
       promoImage:
         alt: Extended Warranty Bonus Image
-        image: /img/tires-with-square.png
+        image: /img/chrysler-dodge-jeep-blue.png
       promoText: $250 Warranty Bonus
 footer:
   footerBgColor: '#F4F4F4'
@@ -44,7 +44,7 @@ footer:
 submissionConfirmation:
   bgImage:
     alt: Thank you image
-    image: /img/thank-you-image.png
+    image: /img/aurora-chrysler-success-image.png
   button:
     buttonLink: 'https://www.aurorachrysler.ca/new-inventory/index.htm'
     buttonText: View Our Inventory
