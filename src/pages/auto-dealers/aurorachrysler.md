@@ -39,7 +39,7 @@ main:
         TOWARDS ANY EXTENDED WARRANTY WITH VEHICLE PURCHASE *OAC. See dealer for
         details. One coupon per purchase.
       promoImage:
-        alt: Extended Warranty Bonus Image
+        alt: Extended Warranty Bonus Image - Jeep
         image: /img/chrysler-dodge-jeep-blue.png
       promoText: $250 Warranty Bonus
 footer:
