@@ -1,6 +1,6 @@
 ---
 templateKey: auto-dealer
-title: BourgeoisNissan
+title: Bourgeois Nissan
 date: 2019-05-08T19:45:40.465Z
 dealerEmail: dave@bourgeoisnissan.com
 header:
