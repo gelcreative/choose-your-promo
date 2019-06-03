@@ -11,10 +11,12 @@ const StyledHeader = styled.header`
     display:block;
     width:100%;
   }
-  .logo-columns > .column {
+  .logo-columns {
     display: flex;
     align-items: center;
-
+  }
+  .logo-columns > .column {
+    display: flex;
     &.header-logo > img,
     &.header-logo > .gatsby-image-wrapper {
       max-width: 300px;
@@ -34,8 +36,7 @@ const StyledHeader = styled.header`
       position: relative;
       flex-shrink: 1;
       white-space: nowrap;
-      color: ${props => props.header.headerTxtColor};
-      
+      color: ${props => props.header.headerTxtColor};      
       &:nth-child(1)::before,
       &:nth-child(2)::before {
         display: inline-block;
@@ -52,6 +53,9 @@ const StyledHeader = styled.header`
         content: url(${phone});
         width: 10px;
       }
+      a {
+        display:inline;
+      }
     }
   }
 
@@ -59,14 +63,14 @@ const StyledHeader = styled.header`
     .header-info-right {
       li {
         &:nth-child(1)::after,
-        &:nth-child(2)::after {
-          content: '|';
-          display: inline-block;
-          position: absolute;
-          right: 0;
-          top: 50%;
-          transform: translateY(-50%);
-        }
+        // &:nth-child(2)::after {
+        //   content: '|';
+        //   display: inline-block;
+        //   position: absolute;
+        //   right: 0;
+        //   top: 50%;
+        //   transform: translateY(-50%);
+        // }
       }
     }
   }
@@ -79,11 +83,21 @@ const StyledHeader = styled.header`
       justify-content: center;
       align-items: center;
     }
+    .logo-columns {
+      flex:1;
+      justify-content: center;
+    }
+    .logo-columns > .column {
+      max-width:200px;      
+    }
 
     .header-info-right {
       flex-direction: column;
       li {
         white-space: normal;
+      }
+      .devider {
+        display:none;
       }
     }
   }
@@ -100,7 +114,7 @@ const Header = ({ data }) => {
               {header.headerLogos.map((headerLogo, i) => {
                 return (
                   <div key={headerLogo.logo.alt} className={`column header-logo header-logo-${i + 1}`}>
-                    <a href={data.slug}><PreviewCompatibleImage imageInfo={headerLogo.logo} /></a>
+                    <a href=""><PreviewCompatibleImage imageInfo={headerLogo.logo} /></a>
                   </div>
                 )
               })}
@@ -110,10 +124,13 @@ const Header = ({ data }) => {
             <ul className="header-info-right">
               <li>{header.headerText.address}</li>
               {header.headerText.phone1.length > 1 &&
-                <li>Sales: {header.headerText.phone1}</li>
+                <li>Sales: <a href={`tel:${header.headerText.phone1}`}>{header.headerText.phone1}</a></li>
               }
-              {header.headerText.phone2.length > 1 &&
-                <li>Service: {header.headerText.phone2}</li>
+              {header.headerText.phone1.length > 1 && header.headerText.phone2.length > 1 &&
+                <span className="devider">&#124;</span>
+              }
+              {header.headerText.phone2.length > 1 &&                
+                <li>Service: <a href={`tel:${header.headerText.phone2}`}>{header.headerText.phone2}</a></li>
               }
             </ul>
           </div>

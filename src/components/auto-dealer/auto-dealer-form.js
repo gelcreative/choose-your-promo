@@ -286,10 +286,12 @@ class AutoDealerForm extends Component {
     const url = "https://gelcreative.us20.list-manage.com/subscribe/post?u=82a58f8438d2a92919b416121&amp;id=0826323f30"
 
     if (this.state.promo !== '' && this.state.isSubmitted === false) {
-      return (
+      return (        
         <StyledDealerForm className="columns is-centered" main={main}>
           <div className="column has-text-centered">
+          
             <div className="columns">
+            {/* <a href="">back</a> */}
               <div className="column">
                 <h1>Receive Your {ReactHtmlParser(this.state.promo)}</h1>
               </div>
@@ -346,7 +348,7 @@ class AutoDealerForm extends Component {
     } else {
       return (
         <StyledDealerForm className="columns is-centered" main={main}>
-          <div className="column promo-column promo-column-1 has-text-centered">
+          <div className="column promo-column promo-column-1 has-text-centered">            
             <div className="promo-image-container">
               <PreviewCompatibleImage imageInfo={main.promos.promoOne.promoImage} />
             </div>
