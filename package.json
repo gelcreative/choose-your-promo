@@ -33,7 +33,7 @@
     "react-github-corner": "^2.3.0",
     "react-helmet": "^5.2.0",
     "react-html-parser": "^2.0.2",
-    "remark-html": "^9.0.0",
+    "remark-html": "^13.0.2",
     "styled-components": "^4.2.0",
     "to-querystring": "^1.1.0"
   },
